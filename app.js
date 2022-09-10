@@ -9,6 +9,7 @@ API_URL =
       return response.json();
     })
     .then(function (data) {
+        console.log(data);
         displayData(data)
 
 input.addEventListener('input' , function(){
@@ -34,11 +35,11 @@ displayData(data);
         data.forEach(function (data) {
             coinTable.innerHTML += `
           <div class='d-flex container col-7 justify-content-between border-bottom'>
-          <p><img class='icon' src="${data.image}" alt="">  ${data.id}</p>
-          <p>${data.symbol}</p>
-          <p>${data.current_price}</p>
-          <p class='priceChange'>${data.price_change_24h}</p>
-          <p>${data.market_cap_change_24h}</p>
+          <p class='my-3'><img class='icon' src="${data.image}" alt="">  ${data.id}</p>
+          <p class='my-4'>${data.symbol}</p>
+          <p class='my-4'>${data.current_price}</p>
+          <p class='priceChange my-4'>${data.price_change_24h}</p>
+          <p class='my-4'>${data.market_cap_change_24h}</p>
           </div>`;
           });
 
@@ -53,6 +54,8 @@ displayData(data);
                }
           }
     }
+
+
 
 
 
